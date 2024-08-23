@@ -2,11 +2,11 @@ services:
   windows:
     image: dockurr/windows
     environment:
-      DISK_SIZE: "32G"
-      RAM_SIZE: "3G"
+      DISK_SIZE: "60G"
+      RAM_SIZE: "8"
       CPU_CORES: "2"
       DISK_TYPE: "ide"
-      VERSION : "win8"
+      VERSION : "win10"
     devices:
       - /dev/kvm
     cap_add:
@@ -16,5 +16,5 @@ services:
       - 3389:3389/tcp
       - 3389:3389/udp
     volumes:
-      - /root/ActionDocker:/storage
+      - /mnt:/storage
     stop_grace_period: 2m
