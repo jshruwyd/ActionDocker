@@ -5,7 +5,6 @@ services:
       DISK_SIZE: "60G"
       RAM_SIZE: "8"
       CPU_CORES: "2"
-      DISK_TYPE: "ide"
       VERSION : "win10"
     devices:
       - /dev/kvm
