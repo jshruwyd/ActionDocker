@@ -11,7 +11,7 @@ services:
     devices:
       - /dev/kvm
     volumes:
-      - /mnt:/storage
+      - /tmp:/storage
     cap_add:
       - NET_ADMIN
     ports:
