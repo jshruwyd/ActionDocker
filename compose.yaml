@@ -11,7 +11,7 @@ services:
     devices:
       - /dev/kvm
     volumes:
-      - /tmp:/storage
+      - /run/qemu/a:/storage
     cap_add:
       - NET_ADMIN
     ports:
