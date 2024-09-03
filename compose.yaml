@@ -3,8 +3,8 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      DISK_SIZE: "128G"
-      RAM_SIZE: "12G"
+      DISK_SIZE: "40G"
+      RAM_SIZE: "4G"
       CPU_CORES: "4"
       VERSION: "win10"
       USERNAME: "Windows"
