@@ -101,3 +101,16 @@ sudo cpulimit -l 80 -- sudo kvm \
     -drive if=pflash,format=raw,readonly=off,file=/usr/share/ovmf/OVMF.fd \
     -uuid e47ddb84-fb4d-46f9-b531-14bb15156336 \
     -vnc :0
+# Check if noVNC is already installed
+if [ ! -d "/mnt/noVNC" ]; then
+    echo "noVNC not found, cloning the repository..."
+    git clone https://github.com/novnc/noVNC.git /mnt/noVNC
+    cd /mnt/noVNC
+    chmod +x *
+    echo "noVNC cloned successfully. Starting novnc_proxy..."
+    ./utils/novnc_proxy --vnc localhost:5900 &
+else
+    echo "noVNC is already installed. Starting novnc_proxy..."
+    cd /mnt/noVNC
+    ./utils/novnc_proxy --vnc localhost:5900 &
+fi
